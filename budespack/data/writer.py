@@ -33,7 +33,6 @@ class PulWork:
 
         for key,el in enumerate(vli):
             np.savez(f'{totdir}/{key}_{idx}.npz', vid=el[0].astype(np.uint8), lab=el[1].astype(np.uint8))
-            break
         
         with tarfile.open(f"{self.dadir}/{idx}.tar", "w") as tar:
             for name in os.listdir(f'{totdir}/'):
